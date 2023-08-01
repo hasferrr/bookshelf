@@ -1,0 +1,15 @@
+.Bookshelf {
+  background-color: whitesmoke;
+  padding: var(--padding);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-auto-rows: minmax(15rem, max-content);
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
+}
