@@ -9,13 +9,12 @@ import AddBook from './components/AddBook'
 
 const App = () => {
   const dummies = [
-    new Book('Functional Programming Lorem Ipsum Sit Amet Dolor', 'author', 100, true),
-    new Book('Functional Programming', 'author', 100, true),
+    new Book('Object-Oriented Programming', 'author', 100, false),
     new Book('Functional Programming', 'author', 100, true)
   ]
   const defaultInputBook = { title: '', author: '', pages: '', finish: false }
 
-  const [bookShelf, setBookshelf] = useState(dummies)
+  const [bookshelf, setBookshelf] = useState(dummies)
   const [willAdd, setWillAdd] = useState(false)
   const [inputBook, setInputBook] = useState(defaultInputBook)
 
@@ -30,14 +29,14 @@ const App = () => {
   const addBookToBookshelf = () => {
     const book = new Book(...Object.values(inputBook))
     book.pages = Number(book.pages)
-    setBookshelf(bookShelf.concat(book))
+    setBookshelf(bookshelf.concat(book))
     setWillAdd(false)
     setInputBook(defaultInputBook)
   }
 
   const toggleWillAdd = () => setWillAdd(!willAdd)
 
-  const removeBook = id => setBookshelf(bookShelf.filter(book => book.id !== id))
+  const removeBook = id => setBookshelf(bookshelf.filter(book => book.id !== id))
 
   return (
     <div className='App'>
@@ -50,7 +49,8 @@ const App = () => {
       />
       <Navigation />
       <Bookshelf
-        bookShelf={bookShelf}
+        bookshelf={bookshelf}
+        setBookshelf={setBookshelf}
         toggleWillAdd={toggleWillAdd}
         removeBook={removeBook}
       />

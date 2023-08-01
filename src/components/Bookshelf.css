@@ -42,3 +42,12 @@
   outline: 0;
   width: 100%;
 }
+
+.read {
+  cursor: pointer;
+  user-select: none;
+}
+
+.read:hover {
+  text-decoration: underline;
+}
