@@ -16,7 +16,7 @@ const AddBook = ({ willAdd, addBook }) => {
               <label for='read'>Have you read it?</label>
               <input type='checkbox' id='read' className='sc-gJwTLC ikxBAC'></input>
             </div>
-            <input type='submit' value='Submit'></input>
+            <input type='submit' value='Submit' className='btn'></input>
           </form>
         </div>
       </>

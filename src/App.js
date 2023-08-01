@@ -9,7 +9,7 @@ import AddBook from './components/AddBook'
 
 const App = () => {
   const dummies = [
-    new Book('Functional Programming', 'author', 100, true),
+    new Book('Functional Programming Lorem Ipsum Sit Amet Dolor', 'author', 100, true),
     new Book('Functional Programming', 'author', 100, true),
     new Book('Functional Programming', 'author', 100, true)
   ]
@@ -17,6 +17,7 @@ const App = () => {
   const [willAdd, setWillAdd] = useState(false)
 
   function Book(title, author, pages, finish) {
+    this.id = Math.random() * 10 ** 18
     this.title = title
     this.author = author
     this.pages = pages

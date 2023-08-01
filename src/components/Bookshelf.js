@@ -3,11 +3,12 @@ import './Bookshelf.css'
 const Bookshelf = ({ bookshelf, addBook }) => {
   const createCard = book => {
     return (
-      <div key={book.title + book.author} className='card'>
+      <div key={book.id} className='card'>
         <p>{book.title}</p>
-        <p>{book.author}</p>
+        <p>by {book.author}</p>
         <p>{book.pages} pages</p>
-        <p>{String(book.finish)}</p>
+        <p>Status: {book.finish ? 'Readed' : 'Not readed yet'}</p>
+        <button>Remove</button>
       </div>
     )
   }
