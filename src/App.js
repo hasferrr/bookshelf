@@ -15,7 +15,7 @@ const App = () => {
   ]
   const defaultInputBook = { title: '', author: '', pages: '', finish: false }
 
-  const [bookshelf, setBookshelf] = useState(dummies)
+  const [bookShelf, setBookshelf] = useState(dummies)
   const [willAdd, setWillAdd] = useState(false)
   const [inputBook, setInputBook] = useState(defaultInputBook)
 
@@ -29,24 +29,31 @@ const App = () => {
 
   const addBookToBookshelf = () => {
     const book = new Book(...Object.values(inputBook))
-    setBookshelf(bookshelf.concat(book))
+    book.pages = Number(book.pages)
+    setBookshelf(bookShelf.concat(book))
     setWillAdd(false)
     setInputBook(defaultInputBook)
   }
 
-  const addBook = () => setWillAdd(!willAdd)
+  const toggleWillAdd = () => setWillAdd(!willAdd)
+
+  const removeBook = id => setBookshelf(bookShelf.filter(book => book.id !== id))
 
   return (
     <div className='App'>
       <AddBook
         willAdd={willAdd}
-        addBook={addBook}
+        toggleWillAdd={toggleWillAdd}
         addBookToBookshelf={addBookToBookshelf}
         inputBook={inputBook}
         setInputBook={setInputBook}
       />
       <Navigation />
-      <Bookshelf bookshelf={bookshelf} addBook={addBook} />
+      <Bookshelf
+        bookShelf={bookShelf}
+        toggleWillAdd={toggleWillAdd}
+        removeBook={removeBook}
+      />
     </div>
   )
 }

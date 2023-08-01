@@ -1,6 +1,6 @@
 import './Bookshelf.css'
 
-const Bookshelf = ({ bookshelf, addBook }) => {
+const Bookshelf = ({ bookShelf, toggleWillAdd, removeBook }) => {
   const createCard = book => {
     return (
       <div key={book.id} className='card'>
@@ -8,15 +8,15 @@ const Bookshelf = ({ bookshelf, addBook }) => {
         <p>by {book.author}</p>
         <p>{book.pages} pages</p>
         <p>Status: {book.finish ? 'Readed' : 'Not readed yet'}</p>
-        <button>Remove</button>
+        <button onClick={() => removeBook(book.id)}>Remove</button>
       </div>
     )
   }
 
   return (
     <div className='Bookshelf'>
-      {bookshelf.map(book => createCard(book))}
-      <button className='card add-book' onClick={addBook}>
+      {bookShelf.map(book => createCard(book))}
+      <button className='card add-book' onClick={toggleWillAdd}>
         + Add Book
       </button>
     </div>

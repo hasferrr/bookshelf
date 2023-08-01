@@ -1,7 +1,7 @@
 import './AddBook.css'
 import './coolcheckbox.css'
 
-const AddBook = ({ willAdd, addBook, addBookToBookshelf, inputBook, setInputBook }) => {
+const AddBook = ({ willAdd, toggleWillAdd, addBookToBookshelf, inputBook, setInputBook }) => {
   const submitBook = event => {
     event.preventDefault()
     addBookToBookshelf()
@@ -18,7 +18,7 @@ const AddBook = ({ willAdd, addBook, addBookToBookshelf, inputBook, setInputBook
   if (willAdd) {
     return (
       <>
-        <div className='AddBook' onClick={addBook}></div>
+        <div className='AddBook' onClick={toggleWillAdd}></div>
         <div className='add-book-form flex-down'>
           <form className='flex-down'>
             <p>Add new book</p>
