@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import './App.css'
-import './Navigation.css'
-import './Bookshelf.css'
+import Navigation from './components/Navigation'
+import Bookshelf from './components/Bookshelf'
 
 const App = () => {
   const dummies = [
@@ -27,33 +27,6 @@ const App = () => {
     <div className='App'>
       <Navigation />
       <Bookshelf bookshelf={bookshelf} />
-    </div>
-  )
-}
-
-const Navigation = () => {
-  return (
-    <div className='Navigation'>
-      <div className='title'>My Library</div>
-    </div>
-  )
-}
-
-const Bookshelf = ({ bookshelf }) => {
-  const createCard = book => {
-    return (
-      <div key={book.title + book.author} className='card'>
-        <p>{book.title}</p>
-        <p>{book.author}</p>
-        <p>{book.pages} pages</p>
-        <p>{String(book.finish)}</p>
-      </div>
-    )
-  }
-
-  return (
-    <div className='Bookshelf'>
-      {bookshelf.map(book => createCard(book))}
     </div>
   )
 }
