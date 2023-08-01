@@ -1,0 +1,65 @@
+:root {
+  --height-form: 22rem;
+  --width-form: 20rem;
+}
+
+.AddBook {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.300);
+  position: fixed;
+  display: block;
+  z-index: 1;
+}
+
+.add-book-form {
+  padding: 1.5rem;
+  background-color: white;
+  position: fixed;
+  display: block;
+  z-index: 2;
+  height: var(--height-form);
+  width: var(--width-form);
+  top: calc(50% - calc(var(--height-form) / 2));
+  right: calc(50% - calc(var(--width-form) / 2));
+  border-radius: 8px;
+}
+
+.add-book-form form {
+  background-color: white;
+  gap: 10px;
+  align-items: center;
+}
+
+.add-book-form p {
+  font-size: 1.2rem;
+}
+
+.add-book-form input {
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 90%;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  margin: 0;
+  outline: none;
+}
+
+.add-book-form form p {
+  text-align: center;
+}
+
+.flex-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+
+}

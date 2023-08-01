@@ -13,3 +13,13 @@
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
 }
+
+.add-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 0px;
+}
